@@ -1,0 +1,68 @@
+---
+// Workshops component - display workshop listings
+
+interface Workshop {
+  title: string;
+  description?: string;
+  date?: string;
+  venue?: string;
+  link?: string;
+}
+
+// Import workshops data
+import workshopsData from '../data/workshops.json';
+
+// Sort workshops in reverse chronological order (most recent first)
+const workshops = (workshopsData as Workshop[]).sort((a, b) => {
+  if (!a.date || !b.date) return 0;
+  return new Date(b.date).getTime() - new Date(a.date).getTime();
+});
+
+// Format date for display
+function formatDate(dateString?: string): string {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<section class="workshops py-section-mobile md:py-section-desktop px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-h2-mobile md:text-h2-desktop font-semibold mb-8 text-secondary text-center">
+      Workshops
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {workshops.map((workshop) => (
+        <div class="workshop-card p-6 rounded-lg bg-surface hover:bg-surface/80 transition-all duration-200">
+          <h3 class="text-h3-mobile font-semibold mb-3 text-secondary">
+            {workshop.link ? (
+              <a
+                href={workshop.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="hover:text-primary transition-colors"
+              >
+                {workshop.title}
+              </a>
+            ) : (
+              workshop.title
+            )}
+          </h3>
+          {workshop.description && (
+            <p class="text-text-light text-sm mb-3">
+              {workshop.description}
+            </p>
+          )}
+          <div class="text-xs text-text-light space-y-1">
+            {workshop.venue && (
+              <p class="font-medium">{workshop.venue}</p>
+            )}
+            {workshop.date && (
+              <p>{formatDate(workshop.date)}</p>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

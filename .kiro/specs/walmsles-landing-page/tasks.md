@@ -104,13 +104,19 @@
     - Ensure minimum touch target size of 44x44px on mobile
     - _Requirements: 3.7, 4.3_
 
-- [ ] 6. Create workshops section
-  - [ ] 6.1 Create workshops.json data file
+- [x] 6. Create workshops section
+
+  - [x] 6.1 Create workshops.json data file
+
+
+
     - Define JSON schema for workshop data (title, description, date, venue, link)
     - Add sample workshop entries
     - _Requirements: 7.1, 7.3, 7.4_
   
-  - [ ] 6.2 Create Workshops component
+  - [x] 6.2 Create Workshops component
+
+
     - Import and parse workshops.json
     - Sort workshops in reverse chronological order
     - Display workshop title for each entry
@@ -119,13 +125,18 @@
     - Implement responsive card layout
     - _Requirements: 7.1, 7.2, 7.3, 7.4, 7.5_
 
-- [ ] 7. Create conference talks section
-  - [ ] 7.1 Create talks.json data file
+- [x] 7. Create conference talks section
+
+  - [x] 7.1 Create talks.json data file
+
+
     - Define JSON schema for talk data (title, conference, date, location, slidesLink, recordingLink)
     - Add sample conference talk entries
     - _Requirements: 8.1, 8.2, 8.3_
   
-  - [ ] 7.2 Create ConferenceTalks component
+  - [x] 7.2 Create ConferenceTalks component
+
+
     - Import and parse talks.json
     - Sort talks in reverse chronological order
     - Display talk title and conference name
@@ -133,43 +144,54 @@
     - Implement responsive card layout
     - _Requirements: 8.1, 8.2, 8.3, 8.4, 8.5_
 
-- [ ] 8. Create footer component
+- [x] 8. Create footer component
+
+
   - Create Footer component with copyright notice
   - Add dynamic year display
   - Style with appropriate spacing and typography
   - _Requirements: 6.4, 6.5_
 
-- [ ] 9. Assemble main page
-  - [ ] 9.1 Create index.astro page
+- [x] 9. Assemble main page
+
+  - [x] 9.1 Create index.astro page
+
+
     - Import BaseLayout and all components
     - Compose page with Hero, About, BlogLinks, SocialLinks, Workshops, ConferenceTalks, Footer
     - Ensure proper section spacing
     - Add semantic HTML landmarks (header, main, section, footer)
     - _Requirements: 1.4, 3.8_
   
-  - [ ] 9.2 Implement responsive layout
+  - [x] 9.2 Implement responsive layout
+
     - Test single-column layout on mobile (<768px)
     - Verify multi-column layouts on tablet and desktop
     - Ensure no horizontal scrolling on any device size
     - Test device rotation behavior
     - _Requirements: 4.1, 4.2, 4.4, 4.5_
 
-- [ ] 10. Optimize performance
-  - [ ] 10.1 Optimize images and assets
+- [x] 10. Optimize performance
+
+  - [x] 10.1 Optimize images and assets
+
+
     - Add and optimize favicon
     - Compress any images used
     - Use appropriate image formats (WebP with fallbacks)
     - Implement lazy loading for below-fold images
     - _Requirements: 5.4_
   
-  - [ ] 10.2 Configure build optimization
+  - [x] 10.2 Configure build optimization
+
     - Enable Astro's built-in minification
     - Configure Tailwind CSS purging
     - Inline critical CSS
     - Verify total page size is under 500KB
     - _Requirements: 5.2, 5.3, 5.5_
 
-- [ ] 11. Implement accessibility features
+- [x] 11. Implement accessibility features
+
   - Add proper heading hierarchy (h1, h2, h3)
   - Ensure all links have descriptive text
   - Add ARIA labels where needed
@@ -178,8 +200,11 @@
   - Test with screen reader
   - _Requirements: 6.2_
 
-- [ ] 12. Configure AWS Amplify deployment
-  - [ ] 12.1 Create amplify.yml configuration
+- [x] 12. Configure AWS Amplify deployment
+
+  - [x] 12.1 Create amplify.yml configuration
+
+
     - Define build phases (preBuild, build)
     - Set npm ci as preBuild command
     - Set npm run build as build command
@@ -187,34 +212,42 @@
     - Add node_modules caching
     - _Requirements: 9.1, 9.4_
   
-  - [ ] 12.2 Prepare deployment documentation
+  - [x] 12.2 Prepare deployment documentation
+
+
     - Document custom domain setup steps for walmsles.dev
     - Document SSL/TLS certificate configuration
     - Create deployment checklist
     - _Requirements: 9.2, 9.3_
 
-- [ ] 13. Testing and validation
-  - [ ] 13.1 Cross-browser testing
+- [x] 13. Testing and validation
+
+  - [x] 13.1 Cross-browser testing
+
     - Test in Chrome, Firefox, Safari, Edge
     - Verify all links open in new tabs
     - Check responsive behavior in each browser
     - _Requirements: 2.4, 3.6_
   
-  - [ ] 13.2 Performance testing
+  - [x] 13.2 Performance testing
+
     - Run Lighthouse audit
     - Verify First Contentful Paint < 1.5s
     - Verify total page size < 500KB
     - Check Time to Interactive < 2.5s
     - _Requirements: 5.1, 5.3_
   
-  - [ ] 13.3 Accessibility audit
+  - [x] 13.3 Accessibility audit
+
     - Run Lighthouse accessibility audit
     - Verify WCAG 2.1 AA compliance
     - Test color contrast ratios (4.5:1 for normal text, 3:1 for large text)
     - Verify keyboard navigation
     - _Requirements: 6.2_
   
-  - [ ] 13.4 Content validation
+  - [x] 13.4 Content validation
+
+
     - Verify all external links are correct and working
     - Check all text content for accuracy
     - Validate JSON data files

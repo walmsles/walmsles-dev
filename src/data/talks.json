@@ -1,0 +1,31 @@
+[
+  {
+    "title": "Serverless at Scale: Lessons from Production",
+    "conference": "ServerlessDays ANZ",
+    "date": "2024-05-10",
+    "location": "Sydney, Australia",
+    "slidesLink": "https://speakerdeck.com/walmsles/serverless-at-scale",
+    "recordingLink": "https://youtube.com/watch?v=example1"
+  },
+  {
+    "title": "Event-Driven Architectures with AWS EventBridge",
+    "conference": "AWS Community Day",
+    "date": "2024-02-15",
+    "location": "Melbourne, Australia",
+    "slidesLink": "https://speakerdeck.com/walmsles/eventbridge-patterns"
+  },
+  {
+    "title": "Building Resilient Serverless Applications",
+    "conference": "DevOps Days",
+    "date": "2023-10-20",
+    "location": "Brisbane, Australia",
+    "slidesLink": "https://speakerdeck.com/walmsles/resilient-serverless",
+    "recordingLink": "https://youtube.com/watch?v=example2"
+  },
+  {
+    "title": "Serverless Observability: Beyond the Basics",
+    "conference": "AWS User Group Meetup",
+    "date": "2023-08-05",
+    "location": "Sydney, Australia"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "title": "Building Serverless Applications with AWS Lambda",
+    "description": "Hands-on workshop covering Lambda functions, API Gateway, and DynamoDB integration",
+    "date": "2024-03-15",
+    "venue": "Programming and Tools Meetup",
+    "link": "https://github.com/walmsles/serverless-workshop"
+  },
+  {
+    "title": "Event-Driven Architecture with EventBridge",
+    "description": "Deep dive into building event-driven systems using AWS EventBridge",
+    "date": "2024-01-20",
+    "venue": "AWS Community Day",
+    "link": "https://github.com/walmsles/eventbridge-workshop"
+  },
+  {
+    "title": "Serverless Observability Best Practices",
+    "description": "Workshop on monitoring, logging, and tracing serverless applications",
+    "date": "2023-11-10",
+    "venue": "Programming and Tools Meetup"
+  }
+]

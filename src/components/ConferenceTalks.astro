@@ -1,0 +1,80 @@
+---
+// ConferenceTalks component - display conference talk listings
+
+interface ConferenceTalk {
+  title: string;
+  conference: string;
+  date?: string;
+  location?: string;
+  slidesLink?: string;
+  recordingLink?: string;
+}
+
+// Import talks data
+import talksData from '../data/talks.json';
+
+// Sort talks in reverse chronological order (most recent first)
+const talks = (talksData as ConferenceTalk[]).sort((a, b) => {
+  if (!a.date || !b.date) return 0;
+  return new Date(b.date).getTime() - new Date(a.date).getTime();
+});
+
+// Format date for display
+function formatDate(dateString?: string): string {
+  if (!dateString) return '';
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<section class="conference-talks py-section-mobile md:py-section-desktop px-4 bg-surface">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-h2-mobile md:text-h2-desktop font-semibold mb-8 text-secondary text-center">
+      Conference Talks
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {talks.map((talk) => (
+        <div class="talk-card p-6 rounded-lg bg-background hover:bg-background/80 transition-all duration-200">
+          <h3 class="text-h3-mobile font-semibold mb-2 text-secondary">
+            {talk.title}
+          </h3>
+          <p class="text-text font-medium mb-3">
+            {talk.conference}
+          </p>
+          <div class="text-xs text-text-light space-y-1 mb-4">
+            {talk.location && (
+              <p>{talk.location}</p>
+            )}
+            {talk.date && (
+              <p>{formatDate(talk.date)}</p>
+            )}
+          </div>
+          {(talk.slidesLink || talk.recordingLink) && (
+            <div class="flex gap-3 flex-wrap">
+              {talk.slidesLink && (
+                <a
+                  href={talk.slidesLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm text-accent hover:text-primary transition-colors font-medium"
+                >
+                  View Slides →
+                </a>
+              )}
+              {talk.recordingLink && (
+                <a
+                  href={talk.recordingLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-sm text-accent hover:text-primary transition-colors font-medium"
+                >
+                  Watch Recording →
+                </a>
+              )}
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
