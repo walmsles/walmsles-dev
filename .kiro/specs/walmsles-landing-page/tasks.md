@@ -222,6 +222,7 @@
 
 - [x] 13. Testing and validation
 
+
   - [x] 13.1 Cross-browser testing
 
     - Test in Chrome, Firefox, Safari, Edge

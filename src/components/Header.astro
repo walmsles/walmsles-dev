@@ -1,0 +1,108 @@
+---
+// Header component - navigation menu
+
+interface NavLink {
+  label: string;
+  href: string;
+}
+
+const navLinks: NavLink[] = [
+  { label: "About", href: "#about" },
+  { label: "Blog", href: "#blog" },
+  { label: "Workshops", href: "#workshops" },
+  { label: "Talks", href: "#talks" }
+];
+---
+
+<header class="header sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-surface">
+  <nav class="max-w-6xl mx-auto px-4 py-4">
+    <div class="flex items-center justify-between">
+      <a href="#hero" class="text-lg font-semibold text-secondary hover:text-primary transition-colors">
+        @walmsles
+      </a>
+      <ul class="flex gap-6 items-center">
+        {navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-text hover:text-primary transition-colors text-sm font-medium"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+        <li>
+          <button
+            id="theme-toggle"
+            aria-label="Toggle theme"
+            class="text-text hover:text-primary transition-colors p-2"
+          >
+            <!-- Sun icon (shown in dark mode) -->
+            <svg id="sun-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+            <!-- Moon icon (shown in light mode) -->
+            <svg id="moon-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Theme toggle functionality
+  const themeToggle = document.getElementById('theme-toggle');
+  const sunIcon = document.getElementById('sun-icon');
+  const moonIcon = document.getElementById('moon-icon');
+  
+  function updateIcons() {
+    const html = document.documentElement;
+    const isDark = html.classList.contains('dark');
+    
+    if (isDark) {
+      sunIcon?.classList.remove('hidden');
+      moonIcon?.classList.add('hidden');
+    } else {
+      sunIcon?.classList.add('hidden');
+      moonIcon?.classList.remove('hidden');
+    }
+  }
+  
+  // Set initial icon state
+  updateIcons();
+  
+  themeToggle?.addEventListener('click', () => {
+    const html = document.documentElement;
+    const isDark = html.classList.contains('dark');
+    
+    if (isDark) {
+      html.classList.remove('dark');
+      html.classList.add('light');
+      localStorage.setItem('theme', 'light');
+    } else {
+      html.classList.remove('light');
+      html.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+    
+    updateIcons();
+  });
+</script>
+
+<style>
+  /* Smooth scroll behavior */
+  :global(html) {
+    scroll-behavior: smooth;
+  }
+</style>
