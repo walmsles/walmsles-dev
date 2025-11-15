@@ -44,22 +44,31 @@
     - Ensure color contrast meets WCAG AA standards
     - _Requirements: 6.2, 6.3_
 
-- [ ] 3. Build Hero and About sections
-  - [ ] 3.1 Create Hero component
+- [x] 3. Build Hero and About sections
+
+
+  - [x] 3.1 Create Hero component
+
+
     - Display "Michael Walmsley" as main heading
     - Display "Serverless Architect & AWS Community Builder" as subtitle
     - Implement responsive typography (3rem desktop, 2rem mobile)
     - Center content with proper spacing
     - _Requirements: 1.1, 1.2, 1.4, 1.5_
   
-  - [ ] 3.2 Create About component
+  - [x] 3.2 Create About component
+
+
     - Write professional bio text about serverless and cloud-native focus
     - Implement readable paragraph layout with appropriate line length
     - Add proper vertical spacing
     - _Requirements: 1.3, 1.5_
 
-- [ ] 4. Implement blog links section
-  - [ ] 4.1 Create BlogLinks component
+- [x] 4. Implement blog links section
+
+  - [x] 4.1 Create BlogLinks component
+
+
     - Define blog data structure (name, url, description)
     - Add links for Serverless DNA, blog.walmsles.dev, and dev.to
     - Include brief descriptions for each platform
@@ -67,14 +76,19 @@
     - Add target="_blank" and rel="noopener noreferrer" to links
     - _Requirements: 2.1, 2.2, 2.3, 2.4, 2.5_
   
-  - [ ] 4.2 Style blog link cards
+  - [x] 4.2 Style blog link cards
+
     - Create responsive grid layout (1 column mobile, 3 columns desktop)
     - Add visual hierarchy with typography
     - Ensure minimum touch target size of 44x44px on mobile
     - _Requirements: 4.3, 6.4_
 
-- [ ] 5. Implement social links section
-  - [ ] 5.1 Create SocialLinks component
+- [x] 5. Implement social links section
+
+
+  - [x] 5.1 Create SocialLinks component
+
+
     - Define social profile data structure (platform, url, icon)
     - Add links for LinkedIn, GitHub, YouTube, Twitter/X, AWS Community Builder
     - Implement icon display for each platform
@@ -82,7 +96,8 @@
     - Add target="_blank" and rel="noopener noreferrer" to links
     - _Requirements: 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8_
   
-  - [ ] 5.2 Add social media icons
+  - [x] 5.2 Add social media icons
+
     - Use SVG icons or icon library for social platforms
     - Ensure icons are recognizable and properly sized
     - Add aria-labels for accessibility

@@ -1,0 +1,52 @@
+---
+// BlogLinks component - links to blog platforms
+
+interface BlogLink {
+  name: string;
+  url: string;
+  description: string;
+}
+
+const blogLinks: BlogLink[] = [
+  {
+    name: "Serverless DNA",
+    url: "https://serverlessdna.com",
+    description: "Deep dives into serverless architecture patterns and best practices"
+  },
+  {
+    name: "Personal Blog",
+    url: "https://blog.walmsles.dev",
+    description: "Technical articles and insights on cloud-native development"
+  },
+  {
+    name: "DEV Community",
+    url: "https://dev.to/walmsles",
+    description: "Community posts and tutorials on serverless technologies"
+  }
+];
+---
+
+<section class="blog-links py-section-mobile md:py-section-desktop px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-h2-mobile md:text-h2-desktop font-semibold mb-8 text-secondary text-center">
+      Blog Posts
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {blogLinks.map((blog) => (
+        <a
+          href={blog.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="blog-card block p-6 rounded-lg bg-surface hover:bg-surface/80 transition-all duration-200 hover:scale-105 min-h-[44px]"
+        >
+          <h3 class="text-h3-mobile md:text-h3-desktop font-semibold mb-3 text-secondary">
+            {blog.name}
+          </h3>
+          <p class="text-text-light text-sm">
+            {blog.description}
+          </p>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

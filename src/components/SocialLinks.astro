@@ -1,0 +1,64 @@
+---
+// SocialLinks component - professional and social profile links
+
+interface SocialLink {
+  platform: string;
+  url: string;
+  icon: string;
+  ariaLabel: string;
+}
+
+const socialLinks: SocialLink[] = [
+  {
+    platform: "LinkedIn",
+    url: "https://linkedin.com/in/walmsles",
+    icon: "linkedin",
+    ariaLabel: "Visit Michael's LinkedIn profile"
+  },
+  {
+    platform: "GitHub",
+    url: "https://github.com/walmsles",
+    icon: "github",
+    ariaLabel: "Visit Michael's GitHub profile"
+  },
+  {
+    platform: "YouTube",
+    url: "https://youtube.com/@walmsles",
+    icon: "youtube",
+    ariaLabel: "Visit Michael's YouTube channel"
+  },
+  {
+    platform: "Twitter/X",
+    url: "https://x.com/walmsles",
+    icon: "twitter",
+    ariaLabel: "Visit Michael's Twitter profile"
+  },
+  {
+    platform: "AWS Community",
+    url: "https://builder.aws.com/community/@walmsles",
+    icon: "aws",
+    ariaLabel: "Visit Michael's AWS Community Builder profile"
+  }
+];
+---
+
+<section class="social-links py-section-mobile md:py-section-desktop px-4 bg-surface">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-h2-mobile md:text-h2-desktop font-semibold mb-8 text-secondary text-center">
+      Connect
+    </h2>
+    <div class="flex flex-wrap justify-center gap-4">
+      {socialLinks.map((social) => (
+        <a
+          href={social.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={social.ariaLabel}
+          class="social-link flex items-center gap-2 px-6 py-3 rounded-lg bg-background hover:bg-background/80 transition-all duration-200 hover:scale-105 min-h-[44px] min-w-[44px]"
+        >
+          <span class="text-text font-medium">{social.platform}</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

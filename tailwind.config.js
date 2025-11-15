@@ -1,18 +1,32 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
         primary: '#FF9900',      // AWS Orange
-        secondary: '#232F3E',    // AWS Dark Blue
-        accent: '#146EB4',       // AWS Light Blue
-        text: {
-          DEFAULT: '#16191F',    // Dark text
-          light: '#687078',      // Light text
+        secondary: {
+          DEFAULT: '#E7EDF3',    // Light text for dark mode
+          light: '#C9D1D9',      // For "light" mode
         },
-        background: '#FFFFFF',   // White background
-        surface: '#F7F9FA',      // Light gray surface
+        accent: {
+          DEFAULT: '#5BA4E5',    // Lighter blue for dark mode
+          light: '#58A6FF',      // For "light" mode
+        },
+        text: {
+          DEFAULT: '#E7EDF3',    // Light text (dark mode)
+          light: '#A0AEC0',      // Muted light text
+          'less-dark': '#C9D1D9', // For "light" mode
+        },
+        background: {
+          DEFAULT: '#0D1117',    // Dark background
+          'less-dark': '#1C2128', // "Light" mode (still dark)
+        },
+        surface: {
+          DEFAULT: '#161B22',    // Dark surface
+          'less-dark': '#2D333B', // "Light" mode surface
+        },
       },
       fontFamily: {
         sans: [
