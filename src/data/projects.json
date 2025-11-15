@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Project Name",
+    "description": "Brief description of your project and what it does",
+    "technologies": ["AWS Lambda", "Python", "DynamoDB"],
+    "link": "https://github.com/serverless-dna/project-name",
+    "linkText": "View on GitHub"
+  },
+  {
+    "name": "Another Project",
+    "description": "Description of another project or work you've done",
+    "technologies": ["TypeScript", "EventBridge", "CDK"],
+    "link": "https://example.com/project",
+    "linkText": "Learn More"
+  }
+]

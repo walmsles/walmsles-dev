@@ -1,0 +1,55 @@
+---
+// Projects component - display project work
+
+interface Project {
+  name: string;
+  description: string;
+  technologies: string[];
+  link?: string;
+  linkText?: string;
+}
+
+// Import projects data
+import projectsData from '../data/projects.json';
+
+const projects = projectsData as Project[];
+---
+
+<section id="projects" class="projects py-section-mobile md:py-section-desktop px-4">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-h2-mobile md:text-h2-desktop font-semibold mb-8 text-secondary text-center">
+      Projects
+    </h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {projects.map((project) => (
+        <div class="project-card p-6 rounded-lg bg-surface hover:bg-surface/80 transition-all duration-200">
+          <h3 class="text-h3-mobile font-semibold mb-3 text-secondary">
+            {project.name}
+          </h3>
+          <p class="text-text mb-4">
+            {project.description}
+          </p>
+          {project.technologies && project.technologies.length > 0 && (
+            <div class="flex flex-wrap gap-2 mb-4">
+              {project.technologies.map((tech) => (
+                <span class="text-xs px-3 py-1 rounded-full bg-background text-text-light">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          )}
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-sm text-accent hover:text-primary transition-colors font-medium"
+            >
+              {project.linkText || 'Learn More'} →
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
