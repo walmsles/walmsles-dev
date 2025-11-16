@@ -5,7 +5,7 @@
     "technologies": ["TypeScript", "MCP", "AWS Lambda", "AWS CDK"],
     "link": "https://github.com/orgs/serverless-dna",
     "linkText": "View on GitHub",
-    "sort_index": -20,
+    "sort_index": -10000,
     "publishedDate": "2024-11-01"
   },
   {
