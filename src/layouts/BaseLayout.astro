@@ -42,6 +42,15 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
+    <!-- Google Analytics -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-LFQ0572DMR"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-LFQ0572DMR');
+    </script>
+    
     <!-- Theme Script - Defaults to dark mode -->
     <script is:inline>
       // Default to dark mode, allow toggle to "light" (less dark) mode
