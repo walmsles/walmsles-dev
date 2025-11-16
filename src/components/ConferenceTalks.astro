@@ -59,17 +59,17 @@ function formatDate(dateString?: string): string {
           <h3 class="text-h3-mobile font-semibold mb-2 text-secondary">
             {talk.title}
           </h3>
-          <div class="flex items-center gap-2 mb-3">
-            {talk.type && talkTypeConfig[talk.type] && (
-              <span class={`text-xs px-2 py-1 rounded-full ${talkTypeConfig[talk.type].color} flex items-center gap-1`}>
+          {talk.type && talkTypeConfig[talk.type] && (
+            <div class="mb-2">
+              <span class={`text-xs px-2 py-1 rounded-full ${talkTypeConfig[talk.type].color} inline-flex items-center gap-1`}>
                 <span>{talkTypeConfig[talk.type].icon}</span>
                 <span>{talk.type}</span>
               </span>
-            )}
-            <p class="text-text font-medium">
-              {talk.conference}
-            </p>
-          </div>
+            </div>
+          )}
+          <p class="text-text font-medium mb-3">
+            {talk.conference}
+          </p>
           {talk.description && (
             <p class="text-text-light text-sm mb-3 whitespace-pre-line">
               {talk.description}
