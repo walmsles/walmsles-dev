@@ -3,7 +3,7 @@
     "name": "Serverless DNA",
     "description": "Open-source organization sharing serverless patterns, constructs, and tools for AWS",
     "technologies": ["TypeScript", "MCP", "AWS Lambda", "AWS CDK"],
-    "link": "https://github.com/serverless-dna/mkdocs-mcp",
+    "link": "https://github.com/orgs/serverless-dna",
     "linkText": "View on GitHub",
     "sort_index": -20,
     "publishedDate": "2024-11-01"
