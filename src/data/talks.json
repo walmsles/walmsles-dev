@@ -12,6 +12,7 @@
   {
     "title": "Maximise your VIBE with Powertools and Amazon Q Developer",
     "conference": "AWS Summit 2025",
+    "type": "Lightning Talk",
     "date": "2025-06-04",
     "location": "Sydney, Australia",
     "description": "\"The hottest new programming language is English\" - but what happens when AI gives you code that works but isn't what you'd actually write?\n\nI started frustrated with generic AI-generated serverless code and ended up discovering something that completely changed how I work with AI assistants. Through live demos, you'll see why \"vibe coding\" might be holding back your projects - and what comes next.\n\nWalk away with a new perspective on AI pair programming and practical tools to level up your development workflow immediately."
@@ -19,6 +20,7 @@
     {
     "title": "Maximise your VIBE with Powertools and Amazon Q Developer",
     "conference": "AWS Community Day Aotearoa 2025",
+    "type": "Technical Session",
     "date": "2025-09-18",
     "location": "Wellington, New Zealand",
     "description": "\"The hottest new programming language is English\" - but what happens when AI gives you code that works but isn't what you'd actually write?\n\nI started frustrated with generic AI-generated serverless code and ended up discovering something that completely changed how I work with AI assistants. Through live demos, you'll see why \"vibe coding\" might be holding back your projects - and what comes next.\n\nWalk away with a new perspective on AI pair programming and practical tools to level up your development workflow immediately."
@@ -27,6 +29,7 @@
     "title": "Forget the Vibes, Enter the Flow",
     "conference": "AWS Community Day Australia 2025",
     "date": "2025-08-15",
+    "type": "Lightning Talk",
     "location": "Brisbane, Australia",
     "description": "AI coding tools are fundamentally changing how we build software. But the dominant approach - \"vibe coding\", where developers make broad, hopeful requests to AI - is creating a new kind of technical debt. You receive code that works, but it's generic, hard to maintain, and lacks your context and standards.\n\nIs there a better way?",
     "recordingLink": "https://www.youtube.com/watch?v=9u3ds7sFIfQ&list=PLhjxdA6OnswcGS4Ux5HJSEFmFBx0APJUd"
@@ -35,6 +38,7 @@
     "title": "Unleashing Serverless Scalability on AWS: Practical Strategies and Proven Patterns",
     "conference": "ServerlessDays ANZ",
     "date": "2024-05-24",
+    "type": "Technical Session",
     "location": "Auckland, New Zealand",
     "description": "You've built your serverless application, deployed it with ease, and it's humming along smoothly. But as your user base grows and event volumes soar, you encounter scalability boundaries - performance bottlenecks, throttling, and chaos. Serverless may seem boundless, but those invisible barriers bite hard when you are least prepared!",
     "recordingLink": "https://www.youtube.com/watch?v=HHA2AMt_PJo&list=PLXpoaw88sV5nt4d5h66SLBmqTIkmv5t2a"
@@ -43,14 +47,16 @@
     "title": "What I love about AWS Lambda Powertools for Python",
     "conference": "Serverless Melbourne Meetup",
     "date": "2022-07-01",
+    "type": "Meetup Talk",
     "location": "Melbourne, Australia",
     "description": "A deep dive into AWS Lambda Powertools for Python and how it simplifies building production-ready serverless applications with built-in best practices.",
     "recordingLink": "https://www.youtube.com/watch?v=M1lxr_sNgd4"
   },
     {
-    "title": "Panel: Serverless, Not Just for Startups? (ft. E Shea, M Walmsley, P Hanssens & M Gillard)",
+    "title": "Serverless, Not Just for Startups? (ft. E Shea, M Walmsley, P Hanssens & M Gillard)",
     "conference": "Serverless ANZ 202",
     "date": "2023-03-10",
+    "type": "Panel Discussion",
     "location": "Melbourne, Australia",
     "description": "Serverless technology is often associated with cloud-native startups, but in this leadership panel discussion, some of the most experienced minds in the industry talk about the business value of serverless technology for enterprises. Our panelists will discuss the benefits of serverless technology, including how it can help your organisation become more agile, reduce costs, and improve scalability. They'll also share their experiences with implementing serverless technology in their own organisations, including any challenges they faced and how they overcame them; the type of knowledge and skillsets needed for serverless-first technologists; and the mindset enterprises need to adopt in order to fully benefit from the serverless paradigm.",
     "recordingLink": "https://www.youtube.com/watch?v=M1lxr_sNgd4"

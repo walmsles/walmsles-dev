@@ -16,7 +16,7 @@ interface ConferenceTalk {
 // Talk type icons and colors
 const talkTypeConfig: Record<string, { icon: string; color: string }> = {
   'Keynote': { icon: '🎤', color: 'bg-primary/20 text-primary' },
-  'Panel': { icon: '👥', color: 'bg-accent/20 text-accent' },
+  'Panel Discussion': { icon: '👥', color: 'bg-accent/20 text-accent' },
   'Technical Session': { icon: '💻', color: 'bg-secondary/20 text-secondary' },
   'Meetup Talk': { icon: '💬', color: 'bg-text-light/20 text-text-light' },
   'Lightning Talk': { icon: '⚡', color: 'bg-primary/20 text-primary' },
@@ -56,20 +56,20 @@ function formatDate(dateString?: string): string {
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       {talks.map((talk) => (
         <div class="talk-card p-6 rounded-lg bg-background hover:bg-background/80 transition-all duration-200">
-          <h3 class="text-h3-mobile font-semibold mb-3 text-secondary">
+          <h3 class="text-h3-mobile font-semibold mb-2 text-secondary">
             {talk.title}
           </h3>
-          <div class="flex items-center gap-2 mb-3">
-            <p class="text-text font-medium">
-              {talk.conference}
-            </p>
-            {talk.type && talkTypeConfig[talk.type] && (
-              <span class={`text-xs px-2 py-1 rounded-full ${talkTypeConfig[talk.type].color} inline-flex items-center gap-1`}>
+          <p class="text-text font-medium mb-2">
+            {talk.conference}
+          </p>
+          {talk.type && talkTypeConfig[talk.type] && (
+            <div class="mb-3">
+              <span class="text-xs px-2 py-1 rounded-full border border-text-light text-text-light inline-flex items-center gap-1">
                 <span>{talkTypeConfig[talk.type].icon}</span>
                 <span>{talk.type}</span>
               </span>
-            )}
-          </div>
+            </div>
+          )}
           {talk.description && (
             <p class="text-text-light text-sm mb-3 whitespace-pre-line">
               {talk.description}
