@@ -21,7 +21,9 @@ const navLinks: NavLink[] = [
       <a href="/" class="text-lg font-semibold text-secondary hover:text-primary transition-colors">
         @walmsles
       </a>
-      <ul class="flex gap-6 items-center">
+      
+      <!-- Desktop Navigation -->
+      <ul class="hidden md:flex gap-6 items-center">
         {navLinks.map((link) => (
           <li>
             <a
@@ -38,7 +40,6 @@ const navLinks: NavLink[] = [
             aria-label="Toggle theme"
             class="text-text hover:text-primary transition-colors p-2"
           >
-            <!-- Sun icon (shown in dark mode) -->
             <svg id="sun-icon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="5"/>
               <line x1="12" y1="1" x2="12" y2="3"/>
@@ -50,12 +51,66 @@ const navLinks: NavLink[] = [
               <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
               <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
             </svg>
-            <!-- Moon icon (shown in light mode) -->
             <svg id="moon-icon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24">
               <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
             </svg>
           </button>
         </li>
+      </ul>
+
+      <!-- Mobile Menu Button -->
+      <div class="flex md:hidden items-center gap-2">
+        <button
+          id="theme-toggle-mobile"
+          aria-label="Toggle theme"
+          class="text-text hover:text-primary transition-colors p-2"
+        >
+          <svg id="sun-icon-mobile" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg id="moon-icon-mobile" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+        <button
+          id="mobile-menu-toggle"
+          aria-label="Toggle menu"
+          class="text-text hover:text-primary transition-colors p-2"
+        >
+          <svg id="hamburger-icon" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+      <ul class="flex flex-col gap-4">
+        {navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="mobile-nav-link block text-text hover:text-primary transition-colors text-base font-medium py-2"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   </nav>
@@ -64,8 +119,11 @@ const navLinks: NavLink[] = [
 <script>
   // Theme toggle functionality
   const themeToggle = document.getElementById('theme-toggle');
+  const themeToggleMobile = document.getElementById('theme-toggle-mobile');
   const sunIcon = document.getElementById('sun-icon');
   const moonIcon = document.getElementById('moon-icon');
+  const sunIconMobile = document.getElementById('sun-icon-mobile');
+  const moonIconMobile = document.getElementById('moon-icon-mobile');
   
   function updateIcons() {
     const html = document.documentElement;
@@ -74,16 +132,17 @@ const navLinks: NavLink[] = [
     if (isDark) {
       sunIcon?.classList.remove('hidden');
       moonIcon?.classList.add('hidden');
+      sunIconMobile?.classList.remove('hidden');
+      moonIconMobile?.classList.add('hidden');
     } else {
       sunIcon?.classList.add('hidden');
       moonIcon?.classList.remove('hidden');
+      sunIconMobile?.classList.add('hidden');
+      moonIconMobile?.classList.remove('hidden');
     }
   }
   
-  // Set initial icon state
-  updateIcons();
-  
-  themeToggle?.addEventListener('click', () => {
+  function toggleTheme() {
     const html = document.documentElement;
     const isDark = html.classList.contains('dark');
     
@@ -98,6 +157,45 @@ const navLinks: NavLink[] = [
     }
     
     updateIcons();
+  }
+  
+  // Set initial icon state
+  updateIcons();
+  
+  // Desktop theme toggle
+  themeToggle?.addEventListener('click', toggleTheme);
+  
+  // Mobile theme toggle
+  themeToggleMobile?.addEventListener('click', toggleTheme);
+  
+  // Mobile menu toggle
+  const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const hamburgerIcon = document.getElementById('hamburger-icon');
+  const closeIcon = document.getElementById('close-icon');
+  
+  mobileMenuToggle?.addEventListener('click', () => {
+    const isHidden = mobileMenu?.classList.contains('hidden');
+    
+    if (isHidden) {
+      mobileMenu?.classList.remove('hidden');
+      hamburgerIcon?.classList.add('hidden');
+      closeIcon?.classList.remove('hidden');
+    } else {
+      mobileMenu?.classList.add('hidden');
+      hamburgerIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    }
+  });
+  
+  // Close mobile menu when clicking a link
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      hamburgerIcon?.classList.remove('hidden');
+      closeIcon?.classList.add('hidden');
+    });
   });
 </script>
 
