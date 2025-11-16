@@ -1,26 +1,28 @@
 ---
 // Workshops component - display workshop listings
 
-interface Workshop {
-  title: string;
-  description?: string;
-  date?: string;
-  venue?: string;
-  link?: string;
-}
+import { getCollection } from 'astro:content';
 
-// Import workshops data
-import workshopsData from '../data/workshops.json';
+// Get all workshops from content collection
+const allWorkshops = await getCollection('workshops');
 
-// Sort workshops in reverse chronological order (most recent first)
-const workshops = (workshopsData as Workshop[]).sort((a, b) => {
-  if (!a.date || !b.date) return 0;
-  return new Date(b.date).getTime() - new Date(a.date).getTime();
+// Sort workshops by sort_index (ascending), then by date (descending)
+const workshops = allWorkshops.sort((a, b) => {
+  // First sort by sort_index (lower numbers first)
+  const indexA = a.data.sort_index ?? Number.MAX_SAFE_INTEGER;
+  const indexB = b.data.sort_index ?? Number.MAX_SAFE_INTEGER;
+  
+  if (indexA !== indexB) {
+    return indexA - indexB;
+  }
+  
+  // If sort_index is the same, sort by date (newer first)
+  if (!a.data.date || !b.data.date) return 0;
+  return new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
 });
 
 // Format date for display
-function formatDate(dateString?: string): string {
-  if (!dateString) return '';
+function formatDate(dateString: string): string {
   const date = new Date(dateString);
   return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 }
@@ -33,35 +35,21 @@ function formatDate(dateString?: string): string {
     </h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {workshops.map((workshop) => (
-        <div class="workshop-card p-6 rounded-lg bg-surface hover:bg-surface/80 transition-all duration-200">
-          <h3 class="text-h3-mobile font-semibold mb-3 text-secondary">
-            {workshop.link ? (
-              <a
-                href={workshop.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                class="hover:text-primary transition-colors"
-              >
-                {workshop.title}
-              </a>
-            ) : (
-              workshop.title
-            )}
+        <a 
+          href={`/workshops/${workshop.slug}`}
+          class="workshop-card p-6 rounded-lg bg-surface hover:bg-surface/80 transition-all duration-200 block group"
+        >
+          <h3 class="text-h3-mobile font-semibold mb-3 text-secondary group-hover:text-primary transition-colors">
+            {workshop.data.title}
           </h3>
-          {workshop.description && (
-            <p class="text-text-light text-sm mb-3">
-              {workshop.description}
-            </p>
-          )}
+          <p class="text-text-light text-sm mb-3">
+            {workshop.data.description}
+          </p>
           <div class="text-xs text-text-light space-y-1">
-            {workshop.venue && (
-              <p class="font-medium">{workshop.venue}</p>
-            )}
-            {workshop.date && (
-              <p>{formatDate(workshop.date)}</p>
-            )}
+            <p class="font-medium">{workshop.data.venue}</p>
+            <p>{formatDate(workshop.data.date)}</p>
           </div>
-        </div>
+        </a>
       ))}
     </div>
   </div>

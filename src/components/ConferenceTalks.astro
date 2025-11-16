@@ -6,15 +6,26 @@ interface ConferenceTalk {
   conference: string;
   date?: string;
   location?: string;
+  description?: string;
   slidesLink?: string;
   recordingLink?: string;
+  sort_index?: number;
 }
 
 // Import talks data
 import talksData from '../data/talks.json';
 
-// Sort talks in reverse chronological order (most recent first)
+// Sort talks by sort_index (ascending), then by date (descending)
 const talks = (talksData as ConferenceTalk[]).sort((a, b) => {
+  // First sort by sort_index (lower numbers first)
+  const indexA = a.sort_index ?? Number.MAX_SAFE_INTEGER;
+  const indexB = b.sort_index ?? Number.MAX_SAFE_INTEGER;
+  
+  if (indexA !== indexB) {
+    return indexA - indexB;
+  }
+  
+  // If sort_index is the same, sort by date (newer first)
   if (!a.date || !b.date) return 0;
   return new Date(b.date).getTime() - new Date(a.date).getTime();
 });
@@ -41,6 +52,11 @@ function formatDate(dateString?: string): string {
           <p class="text-text font-medium mb-3">
             {talk.conference}
           </p>
+          {talk.description && (
+            <p class="text-text-light text-sm mb-3">
+              {talk.description}
+            </p>
+          )}
           <div class="text-xs text-text-light space-y-1 mb-4">
             {talk.location && (
               <p>{talk.location}</p>

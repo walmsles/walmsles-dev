@@ -1,16 +1,30 @@
 [
   {
-    "name": "Project Name",
-    "description": "Brief description of your project and what it does",
-    "technologies": ["AWS Lambda", "Python", "DynamoDB"],
-    "link": "https://github.com/serverless-dna/project-name",
-    "linkText": "View on GitHub"
+    "name": "Mkdocs Material MCP Server",
+    "description": "An MCP Server connecting AI to your MkDocs Material live document site.  Provides the same search experience to AI as web users.  Zero configuration setup and works for all types of sites - versioned and non-versioned.",
+    "technologies": ["TypeScript", "MCP", "AI"],
+    "link": "https://github.com/serverless-dna/mkdocs-mcp",
+    "linkText": "View on GitHub",
+    "sort_index": -20,
+    "publishedDate": "2024-11-01"
   },
   {
-    "name": "Another Project",
-    "description": "Description of another project or work you've done",
-    "technologies": ["TypeScript", "EventBridge", "CDK"],
-    "link": "https://example.com/project",
-    "linkText": "Learn More"
+    "name": "Serverless DNA Constructs",
+    "description": "A library of reusable CDK constructs for common use-cases",
+    "technologies": ["AWS Lambda", "Typescript", "AWS Cloud"],
+    "link": "https://github.com/serverless-dna/constructs",
+    "linkText": "View on GitHub",
+    "sort_index": 200,
+    "publishedDate": "2024-01-15"
+  },
+    {
+    "name": "Offical Powertools MCP Server",
+    "description": "The Powertools for AWS Model Context Protocol (MCP) is an MCP implementation that provides search functionality for the Powertools for AWS Lambda documentation across multiple runtimes. It allows your AI agents to search for documentation and examples related to the toolkit, helping you to quickly find the information you need to use Powertools for AWS Lambda effectively.",
+    "technologies": ["AWS Lambda", "Typescript", "AWS Cloud"],
+    "link": "https://github.com/aws-powertools/powertools-mcp",
+    "demoLink": "https://www.youtube.com/watch?v=5qz8ysWT4eM",
+    "linkText": "View on GitHub",
+    "sort_index": -10,
+    "publishedDate": "2024-01-15"
   }
 ]

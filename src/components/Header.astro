@@ -7,18 +7,18 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { label: "About", href: "#about" },
-  { label: "Blog", href: "#blog" },
-  { label: "Projects", href: "#projects" },
-  { label: "Workshops", href: "#workshops" },
-  { label: "Talks", href: "#talks" }
+  { label: "About", href: "/#about" },
+  { label: "Blog", href: "/#blog" },
+  { label: "Projects", href: "/#projects" },
+  { label: "Workshops", href: "/#workshops" },
+  { label: "Talks", href: "/#talks" }
 ];
 ---
 
 <header class="header sticky top-0 z-50 bg-background/95 backdrop-blur-sm border-b border-surface">
   <nav class="max-w-6xl mx-auto px-4 py-4">
     <div class="flex items-center justify-between">
-      <a href="#hero" class="text-lg font-semibold text-secondary hover:text-primary transition-colors">
+      <a href="/" class="text-lg font-semibold text-secondary hover:text-primary transition-colors">
         @walmsles
       </a>
       <ul class="flex gap-6 items-center">

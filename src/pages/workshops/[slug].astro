@@ -1,0 +1,159 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const workshops = await getCollection('workshops');
+  return workshops.map((workshop) => ({
+    params: { slug: workshop.slug },
+    props: { workshop },
+  }));
+}
+
+const { workshop } = Astro.props;
+const { Content } = await workshop.render();
+
+// Format date for display
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+---
+
+<BaseLayout>
+  <Header />
+  <main class="py-section-mobile md:py-section-desktop px-4">
+    <article class="max-w-4xl mx-auto">
+      <div class="mb-8">
+        <a 
+          href="/#workshops" 
+          class="text-accent hover:text-primary transition-colors text-sm font-medium mb-4 inline-block"
+        >
+          ← Back to Workshops
+        </a>
+        <h1 class="text-h1-mobile md:text-h1-desktop font-bold mb-4 text-secondary">
+          {workshop.data.title}
+        </h1>
+        <div class="flex flex-wrap gap-4 text-sm text-text-light mb-6">
+          <span class="font-medium">{workshop.data.venue}</span>
+          <span>•</span>
+          <span>{formatDate(workshop.data.date)}</span>
+          {workshop.data.duration && (
+            <>
+              <span>•</span>
+              <span>{workshop.data.duration}</span>
+            </>
+          )}
+          {workshop.data.level && (
+            <>
+              <span>•</span>
+              <span>{workshop.data.level}</span>
+            </>
+          )}
+        </div>
+        {workshop.data.technologies && workshop.data.technologies.length > 0 && (
+          <div class="flex flex-wrap gap-2 mb-6">
+            {workshop.data.technologies.map((tech: string) => (
+              <span class="text-xs px-3 py-1 rounded-full bg-surface text-text-light">
+                {tech}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+      
+      <div class="prose prose-lg max-w-none">
+        <Content />
+      </div>
+    </article>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .prose {
+    color: var(--color-text);
+  }
+  
+  .prose :global(h2) {
+    color: var(--color-secondary);
+    font-size: 1.875rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .prose :global(h3) {
+    color: var(--color-secondary);
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .prose :global(p) {
+    margin-bottom: 1rem;
+    line-height: 1.75;
+  }
+  
+  .prose :global(ul) {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .prose :global(ol) {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .prose :global(li) {
+    margin-bottom: 0.5rem;
+    line-height: 1.75;
+  }
+  
+  .prose :global(li ul),
+  .prose :global(li ol) {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .prose :global(a) {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+  
+  .prose :global(a:hover) {
+    color: var(--color-primary);
+  }
+  
+  .prose :global(strong) {
+    color: var(--color-secondary);
+    font-weight: 600;
+  }
+  
+  .prose :global(code) {
+    background-color: var(--color-surface);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+  }
+</style>
+
+<script>
+  // Open external links in new tab
+  document.addEventListener('DOMContentLoaded', () => {
+    const links = document.querySelectorAll('.prose a');
+    links.forEach((link) => {
+      const href = link.getAttribute('href');
+      // Check if link is external (starts with http/https or is absolute)
+      if (href && (href.startsWith('http://') || href.startsWith('https://'))) {
+        link.setAttribute('target', '_blank');
+        link.setAttribute('rel', 'noopener noreferrer');
+      }
+    });
+  });
+</script>

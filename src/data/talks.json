@@ -1,31 +1,35 @@
 [
   {
-    "title": "Serverless at Scale: Lessons from Production",
+    "title": "Serverless Scalability Unleashed (DEV319)",
+    "conference": "AWS re:Invent 2024",
+    "date": "2024-12-03",
+    "location": "Las Vegas, USA",
+    "description": "You've built your application, deployed it with ease, and it's humming along. As your user base grows and event volumes soar, soon you see performance bottlenecks, throttling, and chaos. This session prepares you for those invisible barriers. Drawing from our experience using AWS Lambda to build high-scale, event-driven systems, explore a real system failure and hear practical strategies and patterns to help you overcome scalability challenges. Whether you're building greenfield applications or optimizing existing systems, leave this session with the knowledge and confidence to unleash your serverless scalability.",
+    "recordingLink": "https://www.youtube.com/watch?v=HHA2AMt_PJo&list=PLXpoaw88sV5nt4d5h66SLBmqTIkmv5t2a",
+    "sort_index": -1
+  },
+  {
+    "title": "Unleashing Serverless Scalability on AWS: Practical Strategies and Proven Patterns",
     "conference": "ServerlessDays ANZ",
-    "date": "2024-05-10",
-    "location": "Sydney, Australia",
-    "slidesLink": "https://speakerdeck.com/walmsles/serverless-at-scale",
-    "recordingLink": "https://youtube.com/watch?v=example1"
+    "date": "2024-05-24",
+    "location": "Auckland, New Zealand",
+    "description": "You've built your serverless application, deployed it with ease, and it's humming along smoothly. But as your user base grows and event volumes soar, you encounter scalability boundaries - performance bottlenecks, throttling, and chaos. Serverless may seem boundless, but those invisible barriers bite hard when you are least prepared!",
+    "recordingLink": "https://www.youtube.com/watch?v=HHA2AMt_PJo&list=PLXpoaw88sV5nt4d5h66SLBmqTIkmv5t2a"
   },
   {
-    "title": "Event-Driven Architectures with AWS EventBridge",
-    "conference": "AWS Community Day",
-    "date": "2024-02-15",
+    "title": "What I love about AWS Lambda Powertools for Python",
+    "conference": "Serverless Melbourne Meetup",
+    "date": "2022-07-01",
     "location": "Melbourne, Australia",
-    "slidesLink": "https://speakerdeck.com/walmsles/eventbridge-patterns"
+    "description": "A deep dive into AWS Lambda Powertools for Python and how it simplifies building production-ready serverless applications with built-in best practices.",
+    "recordingLink": "https://www.youtube.com/watch?v=M1lxr_sNgd4"
   },
-  {
-    "title": "Building Resilient Serverless Applications",
-    "conference": "DevOps Days",
-    "date": "2023-10-20",
-    "location": "Brisbane, Australia",
-    "slidesLink": "https://speakerdeck.com/walmsles/resilient-serverless",
-    "recordingLink": "https://youtube.com/watch?v=example2"
-  },
-  {
-    "title": "Serverless Observability: Beyond the Basics",
-    "conference": "AWS User Group Meetup",
-    "date": "2023-08-05",
-    "location": "Sydney, Australia"
+    {
+    "title": "Panel: Serverless, Not Just for Startups? (ft. E Shea, M Walmsley, P Hanssens & M Gillard)",
+    "conference": "Serverless ANZ 202",
+    "date": "2023-03-10",
+    "location": "Melbourne, Australia",
+    "description": "Serverless technology is often associated with cloud-native startups, but in this leadership panel discussion, some of the most experienced minds in the industry talk about the business value of serverless technology for enterprises. Our panelists will discuss the benefits of serverless technology, including how it can help your organisation become more agile, reduce costs, and improve scalability. They'll also share their experiences with implementing serverless technology in their own organisations, including any challenges they faced and how they overcame them; the type of knowledge and skillsets needed for serverless-first technologists; and the mindset enterprises need to adopt in order to fully benefit from the serverless paradigm.",
+    "recordingLink": "https://www.youtube.com/watch?v=M1lxr_sNgd4"
   }
 ]
