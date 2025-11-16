@@ -1,4 +1,6 @@
 ---
+import '../styles/global.css';
+
 interface Props {
   title?: string;
   description?: string;
@@ -39,9 +41,6 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
-    <!-- Global Styles -->
-    <link rel="stylesheet" href="/src/styles/global.css" />
     
     <!-- Theme Script - Defaults to dark mode -->
     <script is:inline>
