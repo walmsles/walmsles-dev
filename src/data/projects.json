@@ -1,4 +1,13 @@
 [
+    {
+    "name": "Serverless DNA",
+    "description": "Open-source organization sharing serverless patterns, constructs, and tools for AWS",
+    "technologies": ["TypeScript", "MCP", "AWS Lambda", "AWS CDK"],
+    "link": "https://github.com/serverless-dna/mkdocs-mcp",
+    "linkText": "View on GitHub",
+    "sort_index": -20,
+    "publishedDate": "2024-11-01"
+  },
   {
     "name": "Mkdocs Material MCP Server",
     "description": "An MCP Server connecting AI to your MkDocs Material live document site.  Provides the same search experience to AI as web users.  Zero configuration setup and works for all types of sites - versioned and non-versioned.",
