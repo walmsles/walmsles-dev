@@ -4,6 +4,7 @@
     "conference": "AWS re:Invent 2024",
     "date": "2024-12-03",
     "location": "Las Vegas, USA",
+    "type": "Technical Session",
     "description": "You've built your application, deployed it with ease, and it's humming along. As your user base grows and event volumes soar, soon you see performance bottlenecks, throttling, and chaos. This session prepares you for those invisible barriers. Drawing from our experience using AWS Lambda to build high-scale, event-driven systems, explore a real system failure and hear practical strategies and patterns to help you overcome scalability challenges. Whether you're building greenfield applications or optimizing existing systems, leave this session with the knowledge and confidence to unleash your serverless scalability.",
     "recordingLink": "https://www.youtube.com/watch?v=HHA2AMt_PJo&list=PLXpoaw88sV5nt4d5h66SLBmqTIkmv5t2a",
     "sort_index": -1
