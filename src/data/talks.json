@@ -52,9 +52,18 @@
     "description": "A deep dive into AWS Lambda Powertools for Python and how it simplifies building production-ready serverless applications with built-in best practices.",
     "recordingLink": "https://www.youtube.com/watch?v=M1lxr_sNgd4"
   },
+   {
+    "title": "Unlocking Serverless Observability",
+    "conference": "Serverless Melbourne Meetup",
+    "date": "2023-04-20",
+    "type": "Meetup Talk",
+    "location": "Melbourne, Australia",
+    "description": "Come on a Journey to Event Driven data integration. Learn how to unlock Serverless Observability and fast-track your team to Well Architected using solid open-source foundations. Follow the story of Alice from Widget’s Inc. as she learns how to build a Serverless Event Broker for data integration. We will deep dive into a commonly published event driven pattern and discuss the additional considerations required to make the solution more resilient and observable.",
+    "recordingLink": "https://www.youtube.com/watch?v=H5Z3xNIzKuw"
+  },
     {
     "title": "Serverless, Not Just for Startups? (ft. E Shea, M Walmsley, P Hanssens & M Gillard)",
-    "conference": "Serverless ANZ 202",
+    "conference": "Serverless ANZ 2023",
     "date": "2023-03-10",
     "type": "Panel Discussion",
     "location": "Melbourne, Australia",

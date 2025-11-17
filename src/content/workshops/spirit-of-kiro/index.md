@@ -3,7 +3,6 @@ title: "Spirit of Kiro: Learn Through Playing"
 description: "Hands-on beginner workshop introducing Kiro - the Amazon Agentic AI IDE for all developers."
 date: "2025-11-19"
 venue: "Melbourne AWS Programming and Tools Meetup"
-sort_index: 10
 duration: "3 hours"
 level: "Beginner"
 technologies: ["AWS Lambda", "API Gateway", "DynamoDB", "TypeScript"]
