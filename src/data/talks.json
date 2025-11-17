@@ -10,6 +10,16 @@
     "sort_index": -1
   },
   {
+    "title": "Eliminating AI Adoption Barriers: Moving from Hype to Empirical Success (AIM234)",
+    "conference": "AWS re:Invent 2024",
+    "date": "2024-12-04",
+    "location": "Las Vegas, USA",
+    "type": "Technical Session",
+    "description": "Real-world customer showcase following a blueprint for AI success developed by Qlik and Accenture. Learn about building real-time AI data pipelines, creating trusted data foundations with continuous verification, and defining data architecture strategies that optimize compute spend. Explore creating data products for centralized enterprise data access and delivering reliable, explainable results from generative AI.",
+    "recordingLink": "https://www.youtube.com/watch?v=l_-2YZpKDOo",
+    "sort_index": 0
+  },
+  {
     "title": "Maximise your VIBE with Powertools and Amazon Q Developer",
     "conference": "AWS Summit 2025",
     "type": "Lightning Talk",

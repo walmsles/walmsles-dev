@@ -9,6 +9,15 @@
     "publishedDate": "2024-11-01"
   },
   {
+    "name": "Wide Logger",
+    "description": "Canonical wide logging library for serverless applications. Gather key-value pairs throughout your function execution and flush them as a single, searchable log entry. Includes Middy middleware support, custom formatters (JSON/KeyValue), and optional Lambda context injection. Perfect for tracking business metrics and correlation IDs in distributed systems.",
+    "technologies": ["TypeScript", "AWS Lambda", "Observability", "NPM"],
+    "link": "https://github.com/serverless-dna/wide-logger",
+    "linkText": "View on GitHub",
+    "sort_index": -15,
+    "publishedDate": "2024-03-01"
+  },
+  {
     "name": "walmsles.dev",
     "description": "My personal portfolio site built with Astro, Tailwind CSS v4, and deployed on AWS Amplify. Features content collections for workshops, dynamic routing, and responsive design. Built to showcase my work and share knowledge with the community.",
     "technologies": ["Astro", "Tailwind CSS", "TypeScript", "AWS Amplify"],
@@ -35,6 +44,79 @@
     "linkText": "View on GitHub",
     "sort_index": -20,
     "publishedDate": "2024-11-01"
+  },
+  {
+    "name": "azure2aws",
+    "description": "CLI tool for authenticating to AWS using Azure AD SAML via Chrome automation. Automates the browser-based SAML flow, captures credentials, and saves them to AWS CLI profiles. Built with Go and available via Homebrew.",
+    "technologies": ["Go", "AWS", "Azure AD", "SAML", "CLI"],
+    "link": "https://github.com/walmsles/azure2aws",
+    "linkText": "View on GitHub",
+    "sort_index": 90,
+    "publishedDate": "2023-03-01"
+  },
+  {
+    "name": "Accenture Technical Bootcamp Serverless Enablement",
+    "description": "Comprehensive serverless training materials for Accenture bootcamps across multiple regions (2023-2024). Includes starter projects, demos, and hands-on exercises covering AWS Lambda, API Gateway, and serverless patterns.\n\nBootcamps delivered in:\n• New Zealand (2023, 2024)\n• Sydney, Australia (2024)\n• Canberra, Australia (2024)\n\nRepositories: bootcamp-nz-api-2023, bootcamp_demo, bootcamp-demo-app, bootcamp-sydney-2024, can-bootcamp-2024, nz-bootcamp-2024",
+    "technologies": ["AWS Lambda", "API Gateway", "Serverless", "Training", "CDK"],
+    "link": "https://github.com/walmsles?tab=repositories&q=bootcamp",
+    "linkText": "View All Bootcamp Repos",
+    "sort_index": 90,
+    "publishedDate": "2024-06-01"
+  },
+  {
+    "name": "Socket LLM Connector",
+    "description": "WebSocket-driven task system for long-running communications with AWS Bedrock LLM models. Implements both standard API responses and streaming responses using FIFO SQS queues. Built with Serverless DNA Socket Tasks construct to enable interactive AI conversations over WebSockets.",
+    "technologies": ["AWS Bedrock", "WebSocket", "SQS", "AWS CDK", "TypeScript"],
+    "link": "https://github.com/walmsles/socket-llm",
+    "linkText": "View on GitHub",
+    "sort_index": 95,
+    "publishedDate": "2023-09-01"
+  },
+  {
+    "name": "Serverless Observability Demo",
+    "description": "Performance testing project demonstrating what happens when serverless systems fail - and how retries can mask problems. Features two branches: one with uncontrolled scaling causing boundary clashes, and one with SQS-based flow control. Used for my 'Unlocking Serverless Observability' talk to show real-world failure scenarios.",
+    "technologies": ["AWS Lambda", "EventBridge", "SQS", "Python", "Artillery"],
+    "link": "https://github.com/walmsles/serverless-observability",
+    "linkText": "View on GitHub",
+    "sort_index": 105,
+    "publishedDate": "2023-04-01"
+  },
+  {
+    "name": "URL Shortener (walms.es)",
+    "description": "My personal URL shortener running at walms.es! Built with serverless architecture using API Gateway, Lambda, and DynamoDB. Features custom domain with Route53, automatic redirects, and error handling. A practical tool I use daily for sharing links.",
+    "technologies": ["AWS Lambda", "API Gateway", "DynamoDB", "Python", "Route53"],
+    "link": "https://github.com/walmsles/url-shortener",
+    "demoLink": "https://walms.es",
+    "linkText": "View on GitHub",
+    "sort_index": 110,
+    "publishedDate": "2021-05-01"
+  },
+  {
+    "name": "Zero Code API to SQS",
+    "description": "Exploring the lambda-less, code-less serverless world! Direct API Gateway to SQS integration using only configuration - no Lambda functions required. A demonstration of AWS native service integrations and how far you can go without writing code.",
+    "technologies": ["API Gateway", "SQS", "Serverless Framework", "AWS"],
+    "link": "https://github.com/walmsles/zero-code-api-sqs",
+    "linkText": "View on GitHub",
+    "sort_index": 120,
+    "publishedDate": "2021-08-01"
+  },
+  {
+    "name": "Bing Images Downloader",
+    "description": "A fun automation that downloads daily Bing desktop wallpapers from multiple markets. Built as a learning project for TDD and API integration - runs on my laptop to keep a collection of beautiful Bing images. Never downloads the same image twice!",
+    "technologies": ["Python", "API Integration", "TDD", "Automation"],
+    "link": "https://github.com/walmsles/bing-images-python",
+    "linkText": "View on GitHub",
+    "sort_index": 150,
+    "publishedDate": "2022-03-01"
+  },
+  {
+    "name": "CDK CodeArtifact Construct",
+    "description": "AWS CDK L2 construct for CodeArtifact - filling the gap where AWS provides no official L2 constructs. Simplifies creating domains and repositories with built-in validations, external connection support for NPM, PyPI, Maven, and NuGet, and proper naming conventions.",
+    "technologies": ["AWS CDK", "TypeScript", "CodeArtifact", "NPM"],
+    "link": "https://github.com/walmsles/cdk-codeartifact",
+    "linkText": "View on GitHub",
+    "sort_index": 100,
+    "publishedDate": "2023-06-01"
   },
   {
     "name": "Serverless DNA Constructs",
