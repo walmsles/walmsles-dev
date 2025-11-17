@@ -10,10 +10,20 @@ technologies: ["AWS Lambda", "API Gateway", "DynamoDB", "Python"]
 
 ## Overview
 
-Come and learn about how you can build Serverless Applications faster by progressively adopting Powertools for Lambda. This is a developer focused workshop that will require you to have a laptop, an AWS Account, and IDE. The workshop will be featured using Python, as the development language but you can also choose to use Typescript, Java or .NET if you are more familiar with these - The workshop has dedicated language tracks. The workshop will enable you to explore AWS Powertools for Lambda and guide you on adopting the AWS Well Architected Serverless Lens!
+This is a live coding workshop for the AWS Programminng and Tools Meetup in Melbourne. The workshop will start with the SAM Cli "Hello World" example API project. Throughout the labs we will introduce each of the AWS Lambda Powertools Core utilities to showcase how simple they are to use and adopt for all your projects, and how powerful they are at bringing you closer to the Well Architected Serverless Lens.
+
+This lab assumes zero knowledge and is a great starting point if you are curious about Serverless development with Python and SAM Cli. By the end of the lab you should be familiar with the following:
+
+The labs presented here will shocwase the core Lambda Powertools utilities: Logger, Tracer, Metrics and Event Source Data Classes. With these 4 simple additions to your projects you will supercharge your lambda skills and best practice!
 
 ## What You'll Learn
 
+
+- Creating a project with SAM Cli
+- Building a Serverless Project
+- Deploying a Serverless project with SAM Cli
+- Installing aws-lambda-powertools (for python)
+- Linking the Global AWS Lambda Powertools Layer into your project
 
 
 ## What to Bring
@@ -23,10 +33,8 @@ Come and learn about how you can build Serverless Applications faster by progres
 
 ## Prerequisites
 
-Please checkout the Prerequisites for the workshop [here](https://catalog.workshops.aws/powertools-for-aws-lambda/en-US/002-prerequisites/002-bring-your-own-account)
-
 ## Workshop Materials
 
 All workshop materials, code samples, and exercises are available on GitHub.
 
-[View Workshop →](https://catalog.workshops.aws/powertools-for-aws-lambda/en-US)
+[View Workshop Repository →](https://github.com/walmsles/lambda-powertools-coding-workshop)
