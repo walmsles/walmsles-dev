@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Serverless DNA",
+    "url": "https://serverlessdna.com",
+    "description": "Deep dives into serverless architecture patterns and best practices",
+    "publishedDate": "2024-11-01",
+    "sortIndex": -1
+  },
+  {
+    "name": "AWS Builder Center",
+    "url": "https://builder.aws.com/community/@walmsles",
+    "description": "AWS community contributions and serverless insights",
+    "publishedDate": "2025-11-14"
+  },
+  {
+    "name": "DEV Community",
+    "url": "https://dev.to/walmsles",
+    "description": "Community posts and tutorials on serverless technologies",
+    "publishedDate": "2022-01-01"
+  },
+  {
+    "name": "Personal Blog",
+    "url": "https://blog.walmsles.io",
+    "description": "Technical articles and insights on cloud-native development.  This is my original blog and is no longer actively updated, all current activity is on Serverless DNA.",
+    "publishedDate": "2020-01-01"
+  }
+]

@@ -1,34 +1,28 @@
 ---
 // BlogLinks component - links to blog platforms
+import blogLinksData from '../data/blogs.json';
 
 interface BlogLink {
   name: string;
   url: string;
   description: string;
+  publishedDate: string;
+  sortIndex?: number;
 }
 
-const blogLinks: BlogLink[] = [
-  {
-    name: "Serverless DNA",
-    url: "https://serverlessdna.com",
-    description: "Deep dives into serverless architecture patterns and best practices"
-  },
-  {
-    name: "Personal Blog",
-    url: "https://blog.walmsles.io",
-    description: "Technical articles and insights on cloud-native development.  This is my original blog and is no longer actively updated, all current activity is on Serverless DNA."
-  },
-  {
-    name: "DEV Community",
-    url: "https://dev.to/walmsles",
-    description: "Community posts and tutorials on serverless technologies"
-  },
-  {
-    name: "AWS Community Builder",
-    url: "https://builder.aws.com/community/@walmsles",
-    description: "AWS community contributions and serverless insights"
+// Sort blogs by sortIndex (if present) then by publishedDate descending (newest first)
+const blogLinks = [...blogLinksData].sort((a, b) => {
+  // If both have sortIndex, sort by that (lower numbers first)
+  if (a.sortIndex !== undefined && b.sortIndex !== undefined) {
+    return a.sortIndex - b.sortIndex;
   }
-];
+  // If only a has sortIndex, it comes first
+  if (a.sortIndex !== undefined) return -1;
+  // If only b has sortIndex, it comes first
+  if (b.sortIndex !== undefined) return 1;
+  // Otherwise sort by publishedDate descending
+  return new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime();
+});
 ---
 
 <section id="blogs" class="blog-links py-section-mobile md:py-section-desktop px-4">
