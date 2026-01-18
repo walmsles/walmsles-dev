@@ -6,18 +6,18 @@ import { Image } from 'astro:assets';
 <section id="hero" class="hero min-h-screen flex items-center justify-center px-4 py-section-mobile md:py-section-desktop">
   <div class="text-center max-w-4xl mx-auto">
     <!-- Profile Photo with Credentials -->
-    <div class="mb-8 flex justify-center items-center gap-8">
+    <div class="mb-8 flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8">
       <img
         src="/profile.jpg"
         alt="Michael Walmsley"
-        class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-surface shadow-lg"
+        class="w-48 h-48 md:w-64 md:h-64 lg:w-80 lg:h-80 rounded-full object-cover border-4 border-surface shadow-lg"
       />
       <!-- Credentials and Social -->
-      <div class="flex flex-col gap-6 items-center">
+      <div class="flex flex-col gap-4 md:gap-6 items-center">
         <img
           src="/serverless-hero-badge.png"
           alt="AWS Serverless Hero"
-          class="w-32 h-32 md:w-40 md:h-40 object-contain"
+          class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 object-contain"
         />
         <!-- Social Icons -->
         <div class="flex gap-4">
